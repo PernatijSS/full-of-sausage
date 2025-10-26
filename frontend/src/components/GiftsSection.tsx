@@ -3,8 +3,8 @@ import { useInView } from "motion/react";
 import { useRef, useState } from "react";
 import { GiftModal } from "./GiftModal";
 
-import giftImage1 from "figma:asset/d2dd30bae84ba8c2811de92d757e3e0b3f30c7e8.png";
-import giftImage2 from "figma:asset/ebb7f6681ea38fcdbeefd6abbfa9feafde7b14a4.png";
+import giftImage1 from "../assets/3ed2e27475f1d1f544318751d79a65f7.jpg";
+import giftImage2 from "../assets/1ba66d99c9745a6b490d70e054750df6.jpg";
 
 interface Gift {
   date: string;
@@ -16,16 +16,16 @@ interface Gift {
 
 const gifts: Gift[] = [
   {
-    date: "ОКТ 20, 2025",
+    date: "ОКТ 31, 2025",
     title: "Кулинарное приключение",
-    description: "Потому что лучшие моменты рождаются на кухне, даже если с огоньком 🔥",
+    description: "Я сожгу духовку ради тебя..... ну или же сходим в ресторан",
     image: giftImage1,
     promoCode: "YANA-COOKING-2025",
   },
   {
-    date: "ОКТ 20, 2025",
-    title: "День на природе",
-    description: "Потому что лучшие воспоминания создаются за пределами зоны комфорта 🏕️",
+    date: "ОКТ 31, 2025",
+    title: "Кому то это не понравиться",
+    description: "Будем хайповать как плесень",
     image: giftImage2,
     promoCode: "YANA-ADVENTURE-2025",
   },
@@ -181,7 +181,7 @@ export function GiftsSection() {
           className="mb-16 md:mb-20"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl mb-6">
-            Твои подарки
+            То чем можно будет воспользоваться
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl">
             Потому что ты заслуживаешь самое лучшее

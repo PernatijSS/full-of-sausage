@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { Play, Pause } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 // ИМПОРТИРУЕМ АУДИО ФАЙЛ
-import audioFile from "../assets/Bon Iver Blood Bank.mp3";
+import audioFile from "../assets/Radiohead All I Need.mp3";
 
 export function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -42,10 +42,10 @@ export function MusicPlayer() {
           >
             <div className="bg-black border border-white/30 px-3 py-2 flex items-center gap-2 whitespace-nowrap">
               <span className="text-white text-xs tracking-wider hidden sm:inline">
-                Bon Iver - Blood Bank
+                Radiohead - All I Need
               </span>
               <span className="text-white text-xs tracking-wider sm:hidden">
-                Bon Iver - Blood Bank
+                Radiohead - All I Need
               </span>
               {/* Звуковая волна анимация */}
               <div className="flex gap-0.5 items-center">

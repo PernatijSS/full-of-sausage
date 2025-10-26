@@ -48,7 +48,7 @@ export function GiftModal({ open, onOpenChange, giftTitle, promoCode }: GiftModa
                 {giftTitle}
               </h2>
               <p className="text-base md:text-lg text-gray-400 leading-relaxed">
-                Используй промокод ниже, чтобы получить свой подарок
+                Наверное нужно будет используй промокод ниже, чтобы что то произошло... 
               </p>
             </motion.div>
 
@@ -95,7 +95,7 @@ export function GiftModal({ open, onOpenChange, giftTitle, promoCode }: GiftModa
               className="mt-8 text-center"
             >
               <p className="text-sm text-gray-500">
-                * Детали подарка ты узнаешь лично 😊
+                * Все отправляем в тг и согласовываем дату....
               </p>
             </motion.div>
           </div>

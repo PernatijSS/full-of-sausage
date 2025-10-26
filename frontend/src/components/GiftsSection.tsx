@@ -181,10 +181,10 @@ export function GiftsSection() {
           className="mb-16 md:mb-20"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl mb-6">
-            То чем можно будет воспользоваться
+            То, чем можно будет воспользоваться
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl">
-            Потому что ты заслуживаешь самое лучшее
+            Промики, кодики и т.д
           </p>
         </motion.div>
 

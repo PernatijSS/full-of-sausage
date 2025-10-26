@@ -15,75 +15,46 @@ export function GiftModal({ open, onOpenChange, giftTitle, promoCode }: GiftModa
 
   const handleCopy = async () => {
     try {
-      // Создаем временный textarea для копирования
-      const textArea = document.createElement('textarea');
-      textArea.value = promoCode;
-      
-      // Делаем его невидимым
-      textArea.style.position = 'fixed';
-      textArea.style.top = '0';
-      textArea.style.left = '0';
-      textArea.style.opacity = '0';
-      textArea.style.pointerEvents = 'none';
-      textArea.style.zIndex = '-1';
-      
-      document.body.appendChild(textArea);
-      
-      // Выделяем текст
-      textArea.select();
-      textArea.setSelectionRange(0, 99999); // Для мобильных устройств
-      
-      // Пытаемся скопировать старым методом (работает в iOS)
-      const success = document.execCommand('copy');
-      
-      // Удаляем элемент
-      document.body.removeChild(textArea);
-      
-      if (success) {
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-        return;
-      }
-      
-      // Если старый метод не сработал, пробуем современный
+      // Используем современный Clipboard API
       if (navigator.clipboard && navigator.clipboard.writeText) {
         await navigator.clipboard.writeText(promoCode);
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
-      } else {
-        throw new Error('Clipboard API not available');
+        console.log('Промокод скопирован:', promoCode);
+        return;
       }
       
-    } catch (err) {
-      console.error('Failed to copy:', err);
-      // Fallback для iOS - показываем промокод для ручного копирования
-      const fallbackText = document.createElement('div');
-      fallbackText.style.cssText = `
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: white;
-        color: black;
-        padding: 20px;
-        border-radius: 8px;
-        z-index: 10000;
-        font-size: 18px;
-        font-weight: bold;
-        text-align: center;
-        border: 2px solid #000;
-      `;
-      fallbackText.innerHTML = `
-        <div>${promoCode}</div>
-        <div style="font-size: 14px; color: #666; margin-top: 10px;">Нажмите и удерживайте для копирования</div>
-      `;
-      document.body.appendChild(fallbackText);
+      // Fallback для старых браузеров
+      throw new Error('Clipboard API not available');
       
-      setTimeout(() => {
-        if (document.body.contains(fallbackText)) {
-          document.body.removeChild(fallbackText);
+    } catch (err) {
+      console.error('Clipboard API failed:', err);
+      
+      // Пробуем старый метод как fallback
+      try {
+        const textArea = document.createElement('textarea');
+        textArea.value = promoCode;
+        textArea.style.position = 'fixed';
+        textArea.style.top = '0';
+        textArea.style.left = '0';
+        textArea.style.opacity = '0';
+        document.body.appendChild(textArea);
+        
+        textArea.select();
+        textArea.setSelectionRange(0, 99999);
+        
+        const successful = document.execCommand('copy');
+        document.body.removeChild(textArea);
+        
+        if (successful) {
+          setCopied(true);
+          setTimeout(() => setCopied(false), 2000);
+          console.log('Промокод скопирован через fallback:', promoCode);
+          return;
         }
-      }, 3000);
+      } catch (fallbackErr) {
+        console.error('Fallback also failed:', fallbackErr);
+      }
     }
   };
 
@@ -131,7 +102,7 @@ export function GiftModal({ open, onOpenChange, giftTitle, promoCode }: GiftModa
                   <p className="text-xs tracking-[0.2em] uppercase text-gray-500 mb-3">
                     ПРОМОКОД
                   </p>
-                  <p className="text-2xl md:text-3xl font-mono tracking-wider mb-6 select-text bg-white/5 p-4 rounded">
+                  <p className="text-2xl md:text-3xl font-mono tracking-wider mb-6">
                     {promoCode}
                   </p>
                 </div>
@@ -139,7 +110,7 @@ export function GiftModal({ open, onOpenChange, giftTitle, promoCode }: GiftModa
                   onClick={handleCopy}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-full bg-white text-black px-6 py-4 hover:bg-gray-200 transition-colors duration-200 text-sm tracking-wider uppercase"
+                  className="w-full bg-white text-black px-6 py-4 hover:bg-gray-200 transition-colors duration-200 text-sm tracking-wider uppercase font-semibold"
                   style={{ 
                     WebkitTapHighlightColor: 'transparent',
                     cursor: 'pointer'

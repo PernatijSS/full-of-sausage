@@ -13,6 +13,8 @@ export function MusicPlayer() {
       if (isPlaying) {
         audioRef.current.pause();
       } else {
+                // Устанавливаем громкость в %
+        audioRef.current.volume = 0.2;
         // ВОТ ЭТА СТРОКА ВАЖНА - добавляем воспроизведение
         audioRef.current.play().catch(error => {
           console.error("Error playing audio:", error);

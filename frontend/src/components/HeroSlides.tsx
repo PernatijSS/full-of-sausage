@@ -2,9 +2,9 @@ import { motion, AnimatePresence, useMotionValue, useTransform } from "motion/re
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Mouse } from "lucide-react";
 
-import slideImage1 from "figma:asset/e19a773782dae8fbf826f97faab569e90fafc57d.png";
-import slideImage2 from "figma:asset/955b161b7a485da63e279ee73f09e10e329c7e04.png";
-import slideImage3 from "figma:asset/cd574ccfe511221f260233004e9cc11a57382f39.png";
+import slideImage1 from "../assets/f450ba5435fe3e9219f11f33b68bdfb3.jpg";
+import slideImage2 from "../assets/4ad6764682cf92f33f85d0b1988efc73.jpg";
+import slideImage3 from "../assets/27f29dadc5a54f8c2b82668431a9d620.jpg";
 
 interface Slide {
   category: string;
@@ -16,24 +16,24 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    category: "КОФЕЙНАЯ ТЕРАПИЯ",
-    title: "Wi-Fi и кофе навсегда",
-    description: "Желаю, чтобы Wi-Fi всегда был стабильным, а кофе — не заканчивался ☕️",
-    year: "2024",
+    category: "Опять работать",
+    title: "Меньше работы, больше беззаботы",
+    description: "Желаю, чтобы работы становилось меньше, а количество оценок на Кинопоиске - больше! 🎬✨",
+    year: "2025",
     image: slideImage2,
   },
   {
-    category: "В МИР ЧИПСОВ И СУХАРИКОВ",
-    title: "Добро пожаловать",
-    description: "Пусть жизнь будет такой же крутой и яркой, как эта картинка!",
-    year: "2024",
+    category: "Спуки киллер",
+    title: "Ты - совершенство",
+    description: "Желаю всегда оставаться такой же невероятной и уникальной. 💫",
+    year: "2025",
     image: slideImage3,
   },
   {
-    category: "СКОРОСТЬ И СТИЛЬ",
-    title: "На полной скорости",
-    description: "Пусть твоя жизнь мчится вперёд стильно и без тормозов 🏎️",
-    year: "2024",
+    category: "а точно ли это друзья?",
+    title: "Свой в доску",
+    description: "Пусть рядом будут только легендарные персонажи - которые приносят радость и становятся источником хорошего настроения! 🌟",
+    year: "2025",
     image: slideImage1,
   },
 ];
@@ -147,9 +147,9 @@ export function HeroSlides() {
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               <p className="text-[10px] tracking-[0.2em] uppercase text-gray-500 mb-2">
-                Age
+                Скоко скоко?
               </p>
-              <p className="text-sm tracking-wider">24 года, самый сок...</p>
+              <p className="text-sm tracking-wider">Все как обычно - 18...</p>
             </motion.div>
 
             {/* Scroll indicator */}

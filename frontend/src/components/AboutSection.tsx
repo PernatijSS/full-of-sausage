@@ -85,7 +85,7 @@ export function AboutSection() {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                <h3 className="text-2xl">Яна</h3>
+                <h3 className="text-2xl"></h3>
               </motion.div>
             </div>
 
@@ -97,17 +97,17 @@ export function AboutSection() {
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
                 <p className="text-[10px] tracking-[0.3em] uppercase text-gray-500 mb-6">
-                  ДЕНЬ РОЖДЕНИЯ
+                  PLIN PLIN PLON
                 </p>
                 <motion.h2 
                   className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl mb-2 leading-tight"
                   whileHover={{ 
                     scale: 1.05,
-                    color: "#ff6b9d",
+                    color: "#c52e8bff",
                     transition: { duration: 0.3 }
                   }}
                 >
-                  24 года
+                  Яна,
                 </motion.h2>
                 <motion.h2 
                   className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl mb-8 md:mb-12 leading-tight"
@@ -116,7 +116,7 @@ export function AboutSection() {
                     transition: { duration: 0.3 }
                   }}
                 >
-                  настоящего волшебства
+                  с днём рождения!
                 </motion.h2>
               </motion.div>
 
@@ -129,19 +129,20 @@ export function AboutSection() {
                   className="space-y-6"
                 >
                   <p className="text-sm md:text-base leading-relaxed text-gray-700">
-                    Яна — это человек, который умеет превращать обычные дни в 
-                    праздники. Её энергия заразительна, улыбка искренняя, а способность 
-                    находить радость в мелочах вдохновляет всех вокруг.
+                    Хочу сказать тебе самые простые, но самые важные слова: спасибо, что ты есть. 
+                    Ты стала для меня по - настоящему близким человеком, и я бесконечно рад, что в моей жизни появился кто-то, с кем мне тепло, спокойно и хорошо. 
                   </p>
                   <p className="text-sm md:text-base leading-relaxed text-gray-700">
-                    За эти годы она успела собрать вокруг себя удивительных людей, 
-                    создать множество тёплых воспоминаний и доказать, что быть собой — 
-                    это самое крутое, что можно делать.
+                    Меня восхищает, как ты смотришь на мир. Ты умеешь сочетать уверенность взрослого человека и ту самую искренность, что идёт изнутри. 
+                    В тебе есть стремление - ставить цели, идти к ним спокойно и по-взрослому. 
+                    И рядом с этим - твоя живая, настоящая часть: то, как ты радуешься новой игре, как горят глаза, когда рассказывала мне то, что с тобой произошло. Никогда не забуду про то, как ты мне рассказывала сюжет Death Stranding 2.
+                  </p>
+                  <p className="text-sm md:text-base leading-relaxed text-gray-700">
+                    Я верю, что у тебя этот год - будет насыщенным и светлым!
                   </p>
 
                   <div className="pt-4">
                     <p className="text-xs tracking-[0.2em] uppercase text-gray-400">
-                      — О НЕЙ
                     </p>
                   </div>
                 </motion.div>
@@ -154,8 +155,9 @@ export function AboutSection() {
                   className="border-t-2 border-black pt-6"
                 >
                   <p className="text-xs uppercase leading-relaxed tracking-wide">
-                    ГЛАВНОЕ, ЧТО НУЖНО ЗНАТЬ: ОНА ДЕЛАЕТ МИР ЯРЧЕ, ПРОСТО НАХОДЯСЬ В НЁМ. 
-                    И ЭТО САМЫЙ ЦЕННЫЙ ПОДАРОК ВСЕЛЕННОЙ.
+                    ГЛАВНОЕ, ЧТО НУЖНО ЗНАТЬ: Ты замечательная. И я хочу, чтобы ты всегда об этом помнила. 
+                    Ты справишься со всем.
+                    Оставайся такой же - настоящей. Такой, какая ты есть.
                   </p>
                 </motion.div>
               </div>

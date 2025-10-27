@@ -19,7 +19,7 @@ export function MusicPlayer() {
         audioRef.current.play().catch(error => {
           console.error("Error playing audio:", error);
         });
-        console.log("Playing: Bon Iver - Blood Bank");
+        console.log("Radiohead - All I Need");
       }
       setIsPlaying(!isPlaying);
     }
